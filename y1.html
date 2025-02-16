@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดสถานที่</title>
+    <link rel="stylesheet" href="y1.css">
+</head>
+<body>
+    <style>
+        
+    </style>
+    <header class="sticky-header">
+        <h1>ร้านอะเหน่</h1>
+    </header>
+
+    <div class="content">
+        <!-- เพิ่มส่วน slider สำหรับรูป -->
+        <div class="slider-container">
+            <div class="slider" id="image-slider">
+                <img src="y11.jpg" alt="สถานที่ 1">
+                <img src="y12.jpg" alt="สถานที่ 2">
+                <img src="y13.jpg" alt="สถานที่ 3">
+                <img src="y14.jpg" alt="สถานที่ 3">
+            </div>
+            <button class="prev" id="prev-btn">❮</button>
+            <button class="next" id="next-btn">❯</button>
+        </div>
+        
+        <div class="description">
+            <p>อธิบายรายละเอียด</p>
+            <div class="contact">
+                <span class="phone-icon">📞</span>
+                <span>0123456789</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="action-btn">จอง</button>
+        <button class="action-btn">เวลาเปิด-ปิด</button>
+        <button class="action-btn">แผนที่</button>
+    </div>
+
+    <div class="review-section">
+        <h2>รีวิว</h2>
+        <div class="review-box">
+            <span class="comment-icon">💬</span>
+            <textarea id="review-input" placeholder="เขียนรีวิว..."></textarea>
+            <button id="send-btn">✈️</button>
+        </div>
+        <div id="review-list"></div>
+    </div>
+
+    <script>
+        // เพิ่มฟังก์ชันเลื่อนรูป
+        document.addEventListener("DOMContentLoaded", function() {
+            const slider = document.getElementById('image-slider');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
+
+            const images = slider.querySelectorAll('img');
+            const totalImages = images.length;
+
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = totalImages - 1;
+                }
+                updateSlider();
+            });
+
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < totalImages - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateSlider();
+            });
+
+            // รีวิวฟังก์ชันเดิม
+            const sendBtn = document.getElementById("send-btn");
+            const reviewInput = document.getElementById("review-input");
+            const reviewList = document.getElementById("review-list");
+
+            sendBtn.addEventListener("click", function() {
+                const text = reviewInput.value.trim();
+                if (text === "") return;
+
+                const reviewDiv = document.createElement("div");
+                reviewDiv.classList.add("review");
+
+                const reviewText = document.createElement("span");
+                reviewText.textContent = text;
+
+                const deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "🗑️";
+                deleteBtn.classList.add("delete-btn");
+
+                reviewDiv.appendChild(reviewText);
+                reviewDiv.appendChild(deleteBtn);
+                reviewList.appendChild(reviewDiv);
+
+                reviewInput.value = "";
+
+                deleteBtn.addEventListener("click", function() {
+                    reviewList.removeChild(reviewDiv);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

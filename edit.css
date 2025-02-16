@@ -1,0 +1,170 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #0a5f3d;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container and form layout */
+.container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button style */
+.upload-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.upload-btn:hover {
+    background-color: #45a049;
+}
+
+/* Hamburger menu style */
+.hamburger-menu {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f39c12;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.hamburger-menu span {
+    color: white;
+}
+
+/* Menu options for hamburger */
+#menuOptions {
+    display: none;
+    background-color: #f39c12;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 150px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#menuOptions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menuOptions ul li {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+#menuOptions ul li:last-child {
+    border-bottom: none;
+    font-size: 20px;
+}
+
+#menuOptions ul li:hover {
+    background-color: #d6e622;
+    font-size: 20px;
+}
+
+/* Style for the content */
+.detail1 {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.detail1 img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    input, textarea, select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .upload-btn {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .hamburger-menu {
+        font-size: 26px;
+        padding: 8px;
+    }
+
+    .detail1 {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 20px;
+    }
+
+    .hamburger-menu {
+        font-size: 24px;
+        padding: 8px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    input, textarea, select {
+        font-size: 14px;
+        padding: 6px;
+    }
+}

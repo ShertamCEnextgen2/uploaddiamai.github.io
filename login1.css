@@ -1,0 +1,54 @@
+body { 
+    text-align: center; 
+    font-family: Arial, sans-serif; 
+}
+
+.container { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+}
+
+input { 
+    margin: 10px; 
+    padding: 10px; 
+    width: 250px; 
+}
+
+.button { 
+    padding: 10px 20px; 
+    font-size: 18px; 
+    background-color: blue; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        height: auto; /* ปรับความสูงให้พอดีกับเนื้อหา */
+    }
+
+    input {
+        width: 80%;  /* ปรับขนาดความกว้างของ input ให้ยืดหยุ่น */
+    }
+
+    .button {
+        font-size: 16px; /* ลดขนาดฟอนต์ของปุ่ม */
+        padding: 8px 16px; /* ปรับขนาดของปุ่มให้เล็กลง */
+    }
+}
+
+@media (max-width: 480px) {
+    input {
+        width: 90%;  /* ให้ input ยืดเต็มความกว้างบนหน้าจอมือถือ */
+    }
+
+    .button {
+        font-size: 14px;  /* ลดขนาดฟอนต์ของปุ่มให้เล็กลง */
+        padding: 6px 12px; /* ปรับขนาดของปุ่มให้เล็กลง */
+    }
+}

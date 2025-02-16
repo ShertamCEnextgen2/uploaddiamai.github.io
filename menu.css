@@ -1,0 +1,210 @@
+/* ฟอนต์ของ Press Start 2P สำหรับธีมพิกเซล */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    position: relative;
+    background: linear-gradient(to right, #3733ff, #47f9ff, #32cd82, #ffbb00, #FFD700);
+    font-family: 'Press Start 2P', cursive;
+    color: #333;
+    min-height: 100vh;
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+/* Animation ให้พื้นหลังเคลื่อนไหว */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* สไตล์เหรียญ */
+.coin-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.coin {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('coin.png');
+    background-size: cover;
+    animation: float 4s infinite alternate ease-in-out;
+}
+
+/* ตำแหน่งของเหรียญกระจายทั่วหน้าเว็บ */
+.coin1 { top: 5%; left: 5%; animation-delay: 0s; }
+.coin2 { top: 15%; left: 100%; animation-delay: 0.5s; }
+.coin3 { top: 10%; left: 70%; animation-delay: 1s; }
+.coin4 { top: 30%; left: 10%; animation-delay: 1.5s; }
+.coin5 { top: 25%; left: 80%; animation-delay: 2s; }
+.coin6 { top: 50%; left: 70%; animation-delay: 2.5s; }
+.coin7 { top: 60%; left: 50%; animation-delay: 3s; }
+.coin8 { top: 40%; left: 25%; animation-delay: 3.5s; }
+.coin9 { top: 70%; left: 30%; animation-delay: 4s; }
+.coin10 { top: 80%; left: 90%; animation-delay: 4.5s; }
+
+/* Animation เหรียญขยับ */
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+.camera-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out; /* การขยายปุ่ม */
+}
+
+.camera-button:hover {
+    background-color: #e67e22;
+    transform: scale(1.1);
+}
+
+/* ให้รูปมี transition effect */
+.slide img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* เพิ่มการเคลื่อนไหว */
+  }
+  
+  .slide:hover img {
+    transform: scale(1.05); /* ขยายรูปเมื่อ hover */
+  }
+  
+  .slider-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+  }
+  
+  .slide {
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 300px; /* ความกว้างของแต่ละสไลด์ */
+  }
+  
+
+.button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FF6347; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.button:hover {
+    background-color: #e67e22;
+}
+
+/* พื้นหลังแบบพิกเซล */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('bg-game.png') repeat;
+    z-index: -1;
+}
+/* รูปโปรไฟล์ */
+.profile {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #FF6347; /* สีแดงสดใส */
+    cursor: pointer;
+}
+
+/* คอนเทนเนอร์ slider */
+.slider-container {
+    width: 900px;
+    margin: 20px auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.slide {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 250px;
+    margin: 10px;
+    border: 3px solid #FF6347;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'Press Start 2P', cursive;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+/* เพิ่มสไตล์ในขนาดหน้าจอมือถือ */
+@media (max-width: 768px) {
+    .slider-container {
+        width: 100%;
+        padding: 10px;
+    }
+    .slide {
+        width: 250px;
+        height: 200px;
+        margin: 5px;
+    }
+    .button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        width: 220px;
+        height: 180px;
+        margin: 5px;
+    }
+    .button {
+        font-size: 8px;
+        padding: 6px 12px;
+    }
+}

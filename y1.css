@@ -1,0 +1,175 @@
+body {
+    font-family: 'Super Mario 256', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #87CEEB;
+    color: white;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: #FFD700;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 5px solid #fff;
+    text-shadow: 3px 3px 0px #FF4500;
+    z-index: 1000;
+}
+
+.slider-container {
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    border: 8px solid #008000;
+    padding: 20px;
+    background: repeating-linear-gradient(45deg, #228B22, #228B22 10px, #2E8B57 10px, #2E8B57 20px);
+    text-align: left;
+    margin-left: 40px; /* ขยับไปทางซ้ายมากขึ้น */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    border: 5px solid #FFD700;
+    flex-shrink: 0;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #FF0000;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    text-shadow: 2px 2px 0px black;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* จัดชิดซ้าย */
+    gap: 60px; /* เพิ่มช่องไฟระหว่าง slider และ description มากขึ้น */
+    margin: 20px;
+    margin-left: 40px; /* ขยับไปทางซ้ายมากขึ้น */
+}
+
+.content img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #FFD700;
+}
+
+.description {
+    text-align: left;
+    max-width: 400px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background: #008000;
+    color: white;
+    border-radius: 0px;
+    transition: 0.3s;
+    text-shadow: 2px 2px 0px black;
+    box-shadow: 3px 3px 0px #004d00;
+}
+
+.action-btn:hover {
+    background: #FFD700;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 3px 3px 0px #ff9900;
+}
+
+.review-section {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.review-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+textarea {
+    width: 300px;
+    height: 80px;
+    padding: 10px;
+    font-family: 'Super Mario 256', sans-serif;
+    border: 2px solid #FFD700;
+    background-color: #86ff0d;
+    color: #1d0041;
+}
+
+#send-btn {
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    transition: 0.3s;
+}
+
+#send-btn:hover {
+    color: blue;
+}
+
+#review-list {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 400px;
+    margin: auto;
+}
+
+.review {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #FF6347;
+    margin-top: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0px #cc2900;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: yellow;
+    cursor: pointer;
+    font-family: 'Super Mario 256', sans-serif;
+}

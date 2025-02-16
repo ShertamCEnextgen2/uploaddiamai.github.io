@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="edit.css">
+</head>
+<body>
+    <header>
+        <h1>Post</h1>
+    </header>
+
+    <div class="container">
+        <form id="postForm">
+            <div class="form-group">
+                <label for="area">ย่านที่จะโพส:</label>
+                <select id="area" name="area">
+                    <option value="เจริญกรุง">เจริญกรุง</option>
+                    <option value="ท่าเตียน">ท่าเตียน</option>
+                    <option value="บรรรทัดทอง">บรรรทัดทอง</option>
+                    <option value="เยาวราช">เยาวราช</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="image1">เลือกรูปปก:</label>
+                <input type="file" id="image1" name="image1">
+            </div>
+
+            <div class="form-group">
+                <label for="image2">เลือกรูป:</label>
+                <input type="file" id="image2" name="image2">
+            </div>
+
+            <div class="form-group">
+                <label for="description">รายละเอียดอธิบายร้าน:</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">เบอร์โทรติดต่อ:</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="hours">เวลาเปิดปิด:</label>
+                <input type="text" id="hours" name="hours">
+            </div>
+
+            <button type="submit" class="upload-btn">โพส</button>
+        </form>
+
+        <div class="hamburger-menu">
+            <span>&#9776;</span> <!-- hamburger icon -->
+            <div id="menuOptions" style="display:none;">
+                <ul>
+                    <li><a href="#">แก้ไขโปรไฟล์</a></li>
+                    <li><a href="#">ออกจากระบบ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="detail1" class="detail1">
+            <h2>ร้านล่าสุด</h2>
+            <div id="recentImage"></div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger Menu Toggle
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            const menu = document.getElementById('menuOptions');
+            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Form Submission and Image Post
+        document.getElementById('postForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const area = document.getElementById('area').value;
+            const image1 = document.getElementById('image1').files[0];
+            const image2 = document.getElementById('image2').files[0];
+            const description = document.getElementById('description').value;
+            const phone = document.getElementById('phone').value;
+            const hours = document.getElementById('hours').value;
+
+            // Show the posted image in detail1
+            const recentImage = document.getElementById('recentImage');
+            const imgElement = document.createElement('img');
+            imgElement.src = URL.createObjectURL(image1); // Show first image as example
+            recentImage.innerHTML = ''; // Clear previous image
+            recentImage.appendChild(imgElement);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw; /* ใช้ความกว้างเต็มหน้าจอ */
+}
+
+input {
+    margin: 10px;
+    padding: 10px;
+    width: 90vw;         /* ช่องกรอกใหญ่จนเกือบเต็มความกว้างของหน้าจอ */
+    max-width: 800px;     /* จำกัดความกว้างสูงสุดในหน้าจอใหญ่ */
+    font-size: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 40px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 90vw;         /* ปุ่มขยายเกือบเต็มความกว้าง */
+    max-width: 800px;     /* จำกัดความกว้างสูงสุด */
+}
+
+/* Responsive Design สำหรับอุปกรณ์ที่มีหน้าจอขนาดกลาง */
+@media (max-width: 768px) {
+    input {
+        width: 95vw;    /* เพิ่มความกว้างให้ใกล้เต็มหน้าจอ */
+        font-size: 18px;
+    }
+    .button {
+        width: 95vw;
+        font-size: 32px;
+        padding: 8px 16px;
+    }
+}
+
+/* Responsive Design สำหรับอุปกรณ์ที่มีหน้าจอขนาดเล็ก (มือถือ) */
+@media (max-width: 480px) {
+    input {
+        width: 98vw;    /* ให้เกือบเต็มหน้าจอ */
+        font-size: 16px;
+    }
+    .button {
+        width: 98vw;
+        font-size: 28px;
+        padding: 6px 12px;
+    }
+}
