@@ -151,20 +151,44 @@ input, textarea, select {
 
 @media (max-width: 480px) {
     header {
-        font-size: 20px;
+        font-size: 18px;
+        padding: 12px;
     }
 
     .hamburger-menu {
-        font-size: 24px;
-        padding: 8px;
+        font-size: 22px;
+        padding: 6px;
+        top: 10px;
+        right: 10px;
     }
 
     .container {
         width: 100%;
+        padding: 10px;
     }
 
     input, textarea, select {
         font-size: 14px;
         padding: 6px;
+    }
+
+    .upload-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .detail1 {
+        padding: 10px;
+    }
+
+    #menuOptions {
+        top: 50px;
+        right: 10px;
+        width: 120px;
+    }
+
+    #menuOptions ul li {
+        font-size: 16px;
+        padding: 8px;
     }
 }
